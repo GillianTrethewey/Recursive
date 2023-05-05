@@ -2,16 +2,9 @@
 Get the length of an array using recursion without accessing its length property.
 */
 
-function getLength(array, index) {
-  index = index || 0;
-
-  if (array[index + 1]) {
-    return getLength(array, index + 1);
-  } else if (index === 0) {
-    return 0;
-  } else {
-    return index + 1;
-  }
+function getLength(array) {
+  if (array[0] === undefined) return 0;
+  else return 1 + getLength(array.slice(1));
 }
 
 console.log(getLength([1])); // -> 1
